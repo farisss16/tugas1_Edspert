@@ -14,7 +14,7 @@ class _BiodataState extends State<Biodata> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Biodata'),
+        title: const Text('Resume'),
         centerTitle: true,
         foregroundColor: Colors.black,
         backgroundColor: Colors.transparent,
