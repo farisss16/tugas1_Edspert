@@ -147,8 +147,8 @@ class BuildCoverImage extends StatelessWidget {
       color: Colors.grey,
       width: double.infinity,
       height: 250,
-      child: Image.network(
-        'https://i.pinimg.com/564x/4d/15/5c/4d155c6f7e5b1c6942059703c403ecaf.jpg',
+      child: Image.asset(
+        'assets/foto2.png',
         fit: BoxFit.fill,
       ),
     );
