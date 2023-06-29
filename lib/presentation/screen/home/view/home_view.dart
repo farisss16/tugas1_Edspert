@@ -27,9 +27,6 @@ class HomeView extends StatelessWidget {
         elevation: 0,
         backgroundColor: Colors.transparent,
         foregroundColor: Colors.black,
-        actions: [
-          TextFormField(),
-        ],
       ),
       body: GetBuilder<HomeController>(
         init: homeController,
