@@ -1,5 +1,7 @@
 import 'package:edspert/biodata.dart';
+import 'package:edspert/presentation/screen/home/view/home_view.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +17,7 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return const GetMaterialApp(
       debugShowCheckedModeBanner: false,
       home: HomeScreen(),
     );
@@ -50,7 +52,18 @@ class HomeScreen extends StatelessWidget {
                     ),
                   );
                 },
-                child: const Text('Go To Next Page'),
+                child: const Text('Go To Resume'),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => HomeView(),
+                    ),
+                  );
+                },
+                child: const Text('Go To List Books'),
               ),
             ],
           ),
