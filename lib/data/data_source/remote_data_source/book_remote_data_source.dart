@@ -5,7 +5,21 @@ import 'package:edspert/data/model/book_response.dart';
 
 class BookRemoteDataSource {
   final Dio client;
-  BookRemoteDataSource({required this.client});
+  const BookRemoteDataSource({required this.client});
+
+  Future<List<Book>> getBooksByName(String name) async {
+    try {
+      final String url = 'https://api.itbook.store/1.0/search/$name';
+      final response = await client.get(url);
+      BookResponse decodedResponse = BookResponse.fromJson(response.data);
+      List<Book> listBooks = decodedResponse.books ?? [];
+
+      return listBooks;
+    } catch (e) {
+      print(e.toString());
+      return [];
+    }
+  }
 
   Future<BookDetailResponse> getDetailBook(String isbn13) async {
     try {

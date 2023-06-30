@@ -4,6 +4,7 @@ import 'package:edspert/data/repository/book_repo_impl.dart';
 import 'package:edspert/domain/use_case/get_books_use_case.dart';
 import 'package:edspert/presentation/screen/detail/view/detail_view.dart';
 import 'package:edspert/presentation/screen/home/controller/home_controller.dart';
+import 'package:edspert/presentation/screen/search/view/search_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -27,6 +28,19 @@ class HomeView extends StatelessWidget {
         elevation: 0,
         backgroundColor: Colors.transparent,
         foregroundColor: Colors.black,
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => SearchView(),
+                ),
+              );
+            },
+            icon: const Icon(Icons.search),
+          ),
+        ],
       ),
       body: GetBuilder<HomeController>(
         init: homeController,

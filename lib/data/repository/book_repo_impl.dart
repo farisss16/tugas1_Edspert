@@ -14,4 +14,8 @@ class BookRepositoryImpl implements BookRepository {
   @override
   Future<BookDetailResponse> getDetailBook(String isbn13) async =>
       await remoteDataSource.getDetailBook(isbn13);
+
+  @override
+  Future<List<Book>> getBooksByName(String name) async =>
+      await remoteDataSource.getBooksByName(name);
 }
